@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from os import path
 from requests import post
 import config
 
@@ -14,7 +15,7 @@ def notify():
         if today.day > last_date.day and today.hour == config.HOUR:
             last_date = today
 
-            with open('users.txt', 'rt') as _file:
+            with open(path.join(BASE_DIRECTORY, 'users.txt'), 'rt') as _file:
                 for user in _file:
                     send_notification(user)
 

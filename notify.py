@@ -1,25 +1,27 @@
 from datetime import datetime, timedelta
-from os import path
-from requests import post
+from requests import get, post
 import config
 
-# TODO remove the file and hook it up to the API
 def notify():
     # Set the last date to yesterday so the logic will work for today.
     last_date = datetime.utcnow() - timedelta(days=1)
 
     while True:
-        # if a particular time:
         today = datetime.utcnow() + timedelta(hours=11)
 
+        # if a particular time:
         if today.day > last_date.day and today.hour == config.HOUR:
-            print 'print true'
             last_date = today
 
-            with open(path.join(config.BASE_DIRECTORY, 'users.txt'), 'rt') as \
-                                                                          _file:
-                for user in _file:
-                    send_notification(user.strip())
+            r = get(config.API_BASE_URI + 'users')
+
+            if r.status_code == 200:
+               users = r.json()['users']
+            else:
+                continue
+
+            for user in users:
+                send_notification(user['facebook_id'])
 
 '''
 Send a notifcation to the user.
@@ -32,7 +34,8 @@ def send_notification(user_id, message='Hey, time to rate your mood for today!')
               'href' : '',
               'template' : message}
 
-    print post(config.BASE_URI + user_id + '/notifications/', params=payload).url
+    post(config.FACEBOOK_BASE_URI + user_id + '/notifications/',
+         params=payload).url
 
 
 if __name__ == "__main__":

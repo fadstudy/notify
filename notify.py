@@ -13,7 +13,8 @@ def notify():
         if today.day > last_date.day and today.hour == config.HOUR:
             last_date = today
 
-            r = get(config.API_BASE_URI + 'users')
+            r = get(config.API_BASE_URI + 'users', auth=('apiuser',
+                                                         'letmeinbrah!'))
 
             users = r.json()['users'] if r.status_code == 200 else {}
 

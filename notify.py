@@ -15,13 +15,9 @@ def notify():
 
             r = get(config.API_BASE_URI + 'users')
 
-            if r.status_code == 200:
-               users = r.json()['users']
-            else:
-                continue
+            users = r.json()['users'] if r.status_code == 200 else {}
 
-            for user in users:
-                send_notification(user['facebook_id'])
+            [send_notification(user['facebook_id']) for user in users]
 
 '''
 Send a notifcation to the user.

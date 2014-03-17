@@ -5,9 +5,11 @@ install:
 - pip install -r requirements.txt
 script: nosetests
 env:
+  global:
+  - TIMEOUT=600000
   matrix:
+  - USE_NETWORK=true
   - secure: fyLkIv7sdwEYBlI/GYloeK9fzwAif/1NStqHXTalyU93hYAVX+35mr7GSRnFJ8uDsrd1OD0OxkQNnq3LAp/TibJUVHoJkbNqsGvcTG55BjMo81vt9wRcERQJvc4v2H+ZNphvIyxHrSFIZoqgcNMh5xwtuTatSY+e8DJbabFms4Q=
   - secure: W+3SXLXjXJzLUkHV2TYljkhdPaU2R9laVpKSM+ipmCHmhdfzMXod+c0P/XOE7jQmjhYkpnl3Na4GET1L3yoxDl9IGGC0Xf2P6R1m4vXVqhT8n3uONWw5V5oSP4veurlHmzWnN73r36iuY74uT5Cox3G7oZmB9Ia3haJwtjUEFdw=
   - secure: KP9rbEKTcIf74HmRCrSPzU1nYSBOcxIY7WSG5s5lEUN95Q5UVYkmYq2zwp+j/bwMSeYv4Oki9BGuzyvF1yAhcD4DW6As1tna4/L7o0vHAntfuNju3NF/CoD/6lkIQwBHGRrlZJYUlXooHNWyZQHM8807FXAwOBC/4liEkjz6swo=
-dd:
-  secure: Eewewu7egTa3irI2PvJdx5ctx83DZMAUwpAiLoLvq7Sw5JO1LePLoZkXT0+mdrqS7tXcFh/tQsFTBLWcqE9KdBo1/wfUUfMvlUTY+sy1a7Ruji2QMwOA/OSax+6cGmvGURKnz3kZg2Qv9FrotjQfDf4g4OpKGmJD6oRycX5PY2M=
+  - secure: Eewewu7egTa3irI2PvJdx5ctx83DZMAUwpAiLoLvq7Sw5JO1LePLoZkXT0+mdrqS7tXcFh/tQsFTBLWcqE9KdBo1/wfUUfMvlUTY+sy1a7Ruji2QMwOA/OSax+6cGmvGURKnz3kZg2Qv9FrotjQfDf4g4OpKGmJD6oRycX5PY2M=

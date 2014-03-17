@@ -4,46 +4,40 @@ from requests import get, post
 
 import config
 
-class Notify():
-    def __init__(self):
-        self.last_date = datetime.utcnow() - timedelta(days=1)
-        self.today = datetime.utcnow() + timedelta(hours=11)
+class Notify:
+    '''
+    Get all users in the study.
 
-    def get_users(self):
-        return True
+    Uses environment username and password, but these can be overwritten.
 
-    def send_notification(self):
-        return True
+    Returns a Response object.
+    http://docs.python-requests.org/en/latest/user/quickstart/#response-content
+    '''
+    def get_users(self, username=config.API_USERNAME,
+                  password=config.API_PASSWORD):
+        return get(config.API_BASE_URI + 'users', auth=(username, password))
 
+    '''
+    Post a notifcation to the facebook user based on the user_id.
 
-def notify():
-    # Set the last date to yesterday so the logic will work for today.
-    last_date = datetime.utcnow() - timedelta(days=1)
+    This method specifies a default message, but the message can be
+    overwritten.
 
-    while True:
-        today = datetime.utcnow() + timedelta(hours=11)
+    Returns a Response object.
+    http://docs.python-requests.org/en/latest/user/quickstart/#response-content
+    '''
+    def send_notification(self, user_id,
+                          message='Hey, time to rate your mood for today!'):
+        payload = { 'access_token' : '{0}|{1}'.format(config.FB_APP_ID,
+                                                      config.FB_APP_SECRET),
+                    'href' : '',
+                    'template' : message }
 
-        # if a particular time:
-        if today.day > last_date.day and today.hour == config.HOUR:
-            last_date = today
+        return post(config.FB_BASE_URI + user_id + '/notifications/',
+                    params=payload)
 
-            r = get(config.API_BASE_URI + 'users', auth=('apiuser',
-                                                         'letmeinbrah!'))
+    def __enter__(self):
+        return self
 
-            users = r.json()['users'] if r.status_code == 200 else {}
-
-            [send_notification(user['facebook_id']) for user in users]
-
-'''
-Send a notifcation to the user.
-
-This method specifies a default message, but the message can be overriden.
-'''
-def send_notification(user_id, message='Hey, time to rate your mood for today!'):
-    payload = {'access_token' : '{0}|{1}'.format(config.FB_APP_ID,
-                                                 config.FB_APP_SECRET),
-              'href' : '',
-              'template' : message}
-
-    post(config.FACEBOOK_BASE_URI + user_id + '/notifications/',
-         params=payload).url
+    def __exit__(self, *args):
+        pass

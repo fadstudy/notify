@@ -1,6 +1,20 @@
+
 from datetime import datetime, timedelta
 from requests import get, post
+
 import config
+
+class Notify():
+    def __init__(self):
+        self.last_date = datetime.utcnow() - timedelta(days=1)
+        self.today = datetime.utcnow() + timedelta(hours=11)
+
+    def get_users(self):
+        return True
+
+    def send_notification(self):
+        return True
+
 
 def notify():
     # Set the last date to yesterday so the logic will work for today.
@@ -33,7 +47,3 @@ def send_notification(user_id, message='Hey, time to rate your mood for today!')
 
     post(config.FACEBOOK_BASE_URI + user_id + '/notifications/',
          params=payload).url
-
-
-if __name__ == "__main__":
-    notify()

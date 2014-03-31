@@ -1,1 +1,1 @@
-worker: python notify.py
+worker: python run.py

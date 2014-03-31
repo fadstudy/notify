@@ -1,5 +1,4 @@
 # -*- coding: utf8 -*-
-
 from datetime import datetime, timedelta
 
 from notify import Notify
@@ -18,5 +17,5 @@ if __name__ == "__main__":
 
             # Get all the users and send them a notifcation.
             with Notify() as n:
-                [n.send_notification(user['facebook_id'])
+                [n.send_notification(user_id=user['facebook_id'])
                  for user in n.get_users().json()['users']]

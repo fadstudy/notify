@@ -1,14 +1,14 @@
-import os
+from os import environ, path
 
-BASE_DIRECTORY = os.path.abspath(os.path.dirname(__file__))
+BASE_DIRECTORY = path.abspath(path.dirname(__file__))
 
-API_VERSION = 'v0.3'
+API_VERSION = environ.get('API_VERSION')
 API_BASE_URI = 'https://thefadstudy.herokuapp.com/api/{0}/'.format(API_VERSION)
-API_USERNAME = os.environ.get('API_USERNAME')
-API_PASSWORD = os.environ.get('API_PASSWORD')
+API_USERNAME = environ.get('API_USERNAME')
+API_PASSWORD = environ.get('API_PASSWORD')
 
 FB_BASE_URI = 'https://graph.facebook.com/'
-FB_APP_ID = os.environ.get('FB_APP_ID')
-FB_APP_SECRET = os.environ.get('FB_APP_SECRET')
+FB_APP_ID = environ.get('FB_APP_ID')
+FB_APP_SECRET = environ.get('FB_APP_SECRET')
 
-HOUR = 14 # The hour of the day to send the notifcation
+HOUR = environ.get('NOTIFY_HOUR') # The hour of the day to send the notifcation

@@ -1,23 +1,24 @@
 # -*- coding: utf8 -*-
-
 from datetime import datetime, timedelta
-import os
+from os import path
 import unittest
 
 from requests import get
 
-import config
+from config import API_PASSWORD, API_USERNAME, API_VERSION, BASE_DIRECTORY, /
+                   FB_APP_ID, FB_APP_SECRET, HOUR
 from notify import Notify
+
 
 class NotifyTests(unittest.TestCase):
     def test_config_variables(self):
-        assert config.BASE_DIRECTORY == os.path.abspath(os.path.dirname(__file__))
-        assert config.API_VERSION == 'v0.3'
-        assert config.API_USERNAME is not None
-        assert config.API_PASSWORD is not None
-        assert config.HOUR is not None
-        assert config.FB_APP_ID is not None
-        assert config.FB_APP_SECRET is not None
+        assert BASE_DIRECTORY == path.abspath(os.path.dirname(__file__))
+        assert API_VERSION is not None
+        assert API_USERNAME is not None
+        assert API_PASSWORD is not None
+        assert HOUR is not None
+        assert FB_APP_ID is not None
+        assert FB_APP_SECRET is not None
 
     def test_class_context(self):
         with Notify() as n:

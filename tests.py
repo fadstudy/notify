@@ -5,7 +5,7 @@ import unittest
 
 from requests import get
 
-from config import API_PASSWORD, API_USERNAME, API_VERSION, BASE_DIRECTORY, /
+from config import API_PASSWORD, API_USERNAME, API_VERSION, BASE_DIRECTORY, \
                    FB_APP_ID, FB_APP_SECRET, HOUR
 from notify import Notify
 

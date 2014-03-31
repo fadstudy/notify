@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 from datetime import datetime, timedelta
-from os. import path
+from os import path
 import unittest
 
 from requests import get

@@ -1,6 +1,6 @@
 # -*- coding: utf8 -*-
 from datetime import datetime, timedelta
-from os import path
+from os. import path
 import unittest
 
 from requests import get
@@ -12,7 +12,7 @@ from notify import Notify
 
 class NotifyTests(unittest.TestCase):
     def test_config_variables(self):
-        assert BASE_DIRECTORY == path.abspath(os.path.dirname(__file__))
+        assert BASE_DIRECTORY == path.abspath(path.dirname(__file__))
         assert API_VERSION is not None
         assert API_USERNAME is not None
         assert API_PASSWORD is not None

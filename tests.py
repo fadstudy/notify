@@ -6,7 +6,7 @@ import unittest
 from requests import get
 
 from config import API_PASSWORD, API_USERNAME, API_VERSION, BASE_DIRECTORY, \
-                   FB_APP_ID, FB_APP_SECRET, HOUR
+                   FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, HOUR
 from notify import Notify
 
 
@@ -17,8 +17,8 @@ class NotifyTests(unittest.TestCase):
         assert API_USERNAME is not None
         assert API_PASSWORD is not None
         assert HOUR is not None
-        assert FB_APP_ID is not None
-        assert FB_APP_SECRET is not None
+        assert FACEBOOK_APP_ID is not None
+        assert FACEBOOK_APP_SECRET is not None
 
     def test_class_context(self):
         with Notify() as n:

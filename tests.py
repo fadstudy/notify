@@ -10,6 +10,7 @@ from config import API_PASSWORD, API_USERNAME, API_VERSION, BASE_DIRECTORY, \
 from notify import Notify
 
 
+
 class NotifyTests(unittest.TestCase):
     def test_config_variables(self):
         assert BASE_DIRECTORY == path.abspath(path.dirname(__file__))

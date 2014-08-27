@@ -30,12 +30,12 @@ class Notify:
         http://docs.python-requests.org/en/latest/user/quickstart/#response-content
         """
 
-        payload = { 'access_token' : '{0}|{1}'.format(config.FB_APP_ID,
-                                                      config.FB_APP_SECRET),
+        payload = { 'access_token' : '{0}|{1}'.format(config.FACEBOOK_APP_ID,
+                                                      config.FACEBOOK_APP_SECRET),
                     'href' : '',
                     'template' : message }
 
-        return post(config.FB_BASE_URI + user_id + '/notifications/',
+        return post(config.FACEBOOK_BASE_URI + user_id + '/notifications/',
                     params=payload)
 
     def __enter__(self):

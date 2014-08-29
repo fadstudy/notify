@@ -11,7 +11,8 @@ if __name__ == "__main__":
     while True:
         today = datetime.utcnow() + timedelta(hours=11)
 
-        # If it's the right time of the day...
+        # If it's the right time of the day...      
+        
         if today.day > last_date.day and today.hour == config.HOUR:
             last_date = today
 

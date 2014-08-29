@@ -4,14 +4,6 @@ python:
 install:
 - pip install -r requirements.txt
 script: nosetests
-env:
-  global:
-  - secure: LfT+wIIyuoHCoHHt59poWu8HWCLXuUDqs3Smfl0fb1u9IDsffj+W18NPQxBtt9aW7Vc0wvG52yvnQ5n5V2DkzSQx92hxLh/Gsy7cAVEiXe0aBA5IH+XPkFZJv45QArO1QVvNcV7l9PukqBrhvHdKsvOFTynXmAojdsv6OUCgdy0=
-  - secure: eNKnQUFaWv6RPAXd4cRKij8RNmf+f9ZfUhVjXRzyIY6WZVzvIB9p7601GQYIhpxseL9nigTsHaKI6EsRl2pz05ZGUPHlJzP07kjbI5WjGHuOGBNXbi9/YE8uOj1VZEqcno5hQJwV9X2/wP5t4sF8yMoukc8S9VuqDNn+7HFjfCs=
-  - secure: LOGKKSk9UHA620jcSlcvhbcFaBhWg66jeFWUSNmjzh0On99mxSYAin3mi0ZkJixiuF8ZBN8dZMy2OM0I3oeNyEpCWymg+Y8VGLe4kCl7DFgDoc7KKIZTQMvWM1e/La5SL9V1BvVaM7N07P+Xurrr8+737xjWciX1QeIeKoDFtDw=
-  - secure: PDYdBizT32bVzufA/Ij2Nn/uYwPm5L9Omg4DRj94JlZt8zRthenwo0UQNCJPI1BEDks9rPTHD+CI4nG7MEWtc2IRMLgqx3KjEMCylepRtOU78Ej3woOA2Qyfh/CdWekFIEtoQPQtI1+Nb/5QmuOFbqTp8EpwgQYvX//8ETOudXM=
-  - secure: IjRtrH82QCuNlon3FthKsdonliH7kreyy6FYG/pYNpbolhgddF0q9Vjj9oh4YN1VjRL9IYNQkmEe46Hd309VIK/Yoodd57OQ/RqTf04urDk4DkNtWEAPw5NrSNz+eTIGZz/V2HBGd0Lz13ZJtne+Y4L/KZFEEdQaTEdGMLmYD5Y=
-  - secure: Zanoj/elmc/hyoQZpG46qPyB4UH6s+f+YY6PM6MWy+gQ+8MFZXpGWiir+MGRYC2LGFixGbOjX7bl0311191dL004lhnNN/WX2JIkf3YYwYlZtqRql7ClDmPnkss5pr+6LiVZSY3AufldleGfN3mvf08ZBWcqY8gtG4QBzKRazSE=
 deploy:
   provider: heroku
   api_key:

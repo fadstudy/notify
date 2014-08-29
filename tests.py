@@ -22,30 +22,30 @@ class NotifyTests(unittest.TestCase):
         
         # checking for hour - remove this code later
         assert HOUR is not 0
-        assert HOUR is not 1
-        assert HOUR is not 2
-        assert HOUR is not 3
-        assert HOUR is not 4
-        assert HOUR is not 5
-        assert HOUR is not 6
-        assert HOUR is not 7
-        assert HOUR is not 8
-        assert HOUR is not 9
-        assert HOUR is not 10
-        assert HOUR is not 11
-        assert HOUR is not 12
-        assert HOUR is not 13
-        assert HOUR is not 14
-        assert HOUR is not 15
-        assert HOUR is not 16
-        assert HOUR is not 17
-        assert HOUR is not 18
-        assert HOUR is not 19
-        assert HOUR is not 20
-        assert HOUR is not 21
-        assert HOUR is not 22
-        assert HOUR is not 23
-        assert HOUR is not 24
+        assert HOUR is not 1 *3600 
+        assert HOUR is not 2 *3600 
+        assert HOUR is not 3 *3600 
+        assert HOUR is not 4 *3600 
+        assert HOUR is not 5 *3600 
+        assert HOUR is not 6 *3600 
+        assert HOUR is not 7 *3600 
+        assert HOUR is not 8 *3600 
+        assert HOUR is not 9 *3600 
+        assert HOUR is not 10 *3600 
+        assert HOUR is not 11 *3600 
+        assert HOUR is not 12 *3600 
+        assert HOUR is not 13 *3600 
+        assert HOUR is not 14 *3600 
+        assert HOUR is not 15 *3600 
+        assert HOUR is not 16 *3600 
+        assert HOUR is not 17 *3600 
+        assert HOUR is not 18 *3600 
+        assert HOUR is not 19 *3600 
+        assert HOUR is not 20 *3600 
+        assert HOUR is not 21 *3600 
+        assert HOUR is not 22 *3600 
+        assert HOUR is not 23 *3600 
+        assert HOUR is not 24 *3600 
         
 
     def test_class_context(self):

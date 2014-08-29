@@ -20,7 +20,7 @@ class NotifyTests(unittest.TestCase):
         assert FACEBOOK_APP_ID is not None
         assert FACEBOOK_APP_SECRET is not None
         
-        #checking for hour - remove this code later
+        # checking for hour - remove this code later
         assert HOUR is not 0
         assert HOUR is not 1
         assert HOUR is not 2
@@ -31,7 +31,7 @@ class NotifyTests(unittest.TestCase):
         assert HOUR is not 7
         assert HOUR is not 8
         assert HOUR is not 9
-        assert HOUR is not 10`
+        assert HOUR is not 10
         assert HOUR is not 11
         assert HOUR is not 12
         assert HOUR is not 13

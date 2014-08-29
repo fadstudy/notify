@@ -21,7 +21,7 @@ class Notify:
     def send_notification(self, user_id,
                           message='Hey, time to rate your mood for today!'):
         """
-        Post a notifcation to the facebook user..
+        Post a notification to the facebook user..
 
         This method specifies a default message, but the message can be
         overwritten.
